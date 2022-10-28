@@ -1,6 +1,3 @@
-// TO DO:
-// - put json reader in a separate file
-
 import drinkList from "./templates/item-list.js";
 
 const xhr = new XMLHttpRequest();
@@ -35,3 +32,7 @@ xhr.addEventListener("load", function () {
 
 xhr.open("GET", url, true);
 xhr.send();
+
+export function logs2(msg) {
+  console.log(msg);
+}

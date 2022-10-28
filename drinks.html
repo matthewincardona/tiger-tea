@@ -13,19 +13,32 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="./pagebuilder.js" type="module"></script>
-  </head>
-  <body>
-    <script>
-    function saveSelection(sel) {
+    </script>
+    <script type="module">
+      import { buildModule }  from "./utilities/module-builder.js";
+      window.onload = (event) => {
+        startBuild();
+      };
+
+      function startBuild() {
+        buildModule("item-list", "data/items.json");
+      }
+
+      function saveSelection(sel) {
         localStorage.setItem("selected", sel);
         window.open("customize-item.html", "_self");
     }
-        </script>
-    <div id="all-drinks" onclick="saveSelection()">
+
+    // document.getElementById("all-drinks").addEventListener("click", () => saveSelection());
+      
+    </script>
+  </head>
+  <body>
+    <div id="all-drinks">
       <h1>All Drinks</h1>
       <hr />
-      <div class="item-list__container" id="item-list">
+      <item-list class="item-list__container"></item-list>
+      <customize-item class="item-list__container"></customize-item>
     </div>
   </body>
 </html>

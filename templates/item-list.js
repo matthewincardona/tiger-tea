@@ -1,4 +1,4 @@
-export default function drinkList(items) {
+export default function itemList(items) {
   return `
     <div class="item">
         <img src="${items.thumbnail}" alt="" class="item__img" />
