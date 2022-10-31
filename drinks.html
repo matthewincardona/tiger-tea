@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drinks</title>
     <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="drinks.css" />
+    <link rel="stylesheet" href="styles.css" />
     <!-- link fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,22 +15,30 @@
     />
     </script>
     <script type="module">
-      import { buildModule }  from "./utilities/module-builder.js";
-      window.onload = (event) => {
-        startBuild();
+      import { buildModule }  from "./builder/module-builder.js";
+      import { loadJSON } from "./utilities/load-json.js";
+      // import { openURL } from "./utilities/dynamic-url.js";
+
+      const startBuild = () => {
+        loadJSON("./data/items.json")
+          .then((data) => {
+            buildModule("item-list", data);
+          })
+          .catch((data) => {
+            console.log(data);
+          });
       };
 
-      function startBuild() {
-        buildModule("item-list", "data/items.json");
-      }
+      startBuild();
+    </script>
 
-      function saveSelection(sel) {
-        localStorage.setItem("selected", sel);
-        window.open("customize-item.html", "_self");
-    }
-
-    // document.getElementById("all-drinks").addEventListener("click", () => saveSelection());
-      
+    <script>
+       function openURL(id) {
+          let targetUrl = "customize-item.html";
+          let urlWithId = targetUrl + "?productId=" + id;
+          console.log(urlWithId);
+          window.open(urlWithId, "_self");
+        }
     </script>
   </head>
   <body>
@@ -38,7 +46,6 @@
       <h1>All Drinks</h1>
       <hr />
       <item-list class="item-list__container"></item-list>
-      <customize-item class="item-list__container"></customize-item>
     </div>
   </body>
 </html>

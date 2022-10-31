@@ -1,10 +1,10 @@
-export default function itemList(items) {
+export default function itemList(item) {
   return `
-    <div class="item">
-        <img src="${items.thumbnail}" alt="" class="item__img" />
+    <div class="item"  onclick="openURL(${item.id})" data-mod-id="${item.id}">
+        <img src="${item.thumbnail}" alt="" class="item__img" />
         <div class="item__inner">
-            <h4 class="item__name">${items.name}</h4>
-            <p class="item__price">$${items.price}</p>
+            <h4 class="item__name">${item.name}</h4>
+            <p class="item__price">$${item.price}</p>
         </div>
     </div>`;
 }
