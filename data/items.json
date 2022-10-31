@@ -3,71 +3,87 @@
     "id": 1,
     "name": "Original Milk Tea",
     "price": 3.99,
-    "thumbnail": "../media/original.png",
+    "thumbnail": "../media/popular-original.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/original.png",
+    "calorie" : 200
   },
 
   {
     "id": 2,
     "name": "Green Milk Tea",
     "price": 3.99,
-    "thumbnail": "../media/green.png",
+    "thumbnail": "../media/popular-green.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/green.png",
+    "calorie" : 200
   },
 
   {
     "id": 3,
     "name": "Taro Milk Tea",
     "price": 3.99,
-    "thumbnail": "../media/taro.png",
+    "thumbnail": "../media/popular-taro.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/taro.png",
+    "calorie" : 200
   },
 
   {
     "id": 4,
     "name": "Thai Milk Tea",
     "price": 3.99,
-    "thumbnail": "../media/thai.png",
+    "thumbnail": "../media/popular-thai.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/thai.png",
+    "calorie" : 200
   },
 
   {
     "id": 5,
     "name": "Mango Milk Tea",
     "price": 5.99,
-    "thumbnail": "../media/mango.png",
+    "thumbnail": "../media/popular-mango.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/mango.png",
+    "calorie" : 200
   },
 
   {
     "id": 6,
     "name": "Oreo Milk Tea",
     "price": 5.99,
-    "thumbnail": "../media/oreo.png",
+    "thumbnail": "../media/popular-oreo.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/oreo.png",
+    "calorie" : 200
   },
 
   {
     "id": 7,
     "name": "Matcha Milk Tea",
     "price": 5.99,
-    "thumbnail": "../media/matcha.png",
+    "thumbnail": "../media/popular-matcha.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/matcha.png",
+    "calorie" : 200
   },
 
   {
     "id": 8,
     "name": "Strawberry Milk Tea",
     "price": 5.99,
-    "thumbnail": "../media/strawberry.png",
+    "thumbnail": "../media/popular-strawberry.png",
     "category": "drink",
-    "isPopular": true
+    "isPopular": true,
+    "menu_img": "../media/strawberry.png",
+    "calorie" : 200
   }
 ]

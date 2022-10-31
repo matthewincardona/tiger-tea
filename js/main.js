@@ -33,10 +33,12 @@ xhr.send();
 
 function surfTemplate(spots) {
   return `
+  <div class="card-drinks">
     <div class = "spot" ${spots.id}">
-    <h2 class = "spot-name">${spots.price}</h2>
-    <h2 class = "spot-name">${spots.name}</h2>
-    </div>`;
+      <p class = "spot-name">${spots.name}</p>
+      <img src="${spots.thumbnail}" alt="${spots.name}" class="spot-photo" />
+    </div>
+  </div>`;
 }
 
 function saveSelection(sel) {

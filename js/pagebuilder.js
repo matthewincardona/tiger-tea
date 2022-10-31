@@ -1,10 +1,10 @@
 // TO DO:
 // - put json reader in a separate file
 
-import drinkList from "./templates/item-list.js";
+import drinkList from "../templates/item-list.js";
 
 const xhr = new XMLHttpRequest();
-const url = "data/items.json";
+const url = "../data/items.json";
 let output = "";
 
 /// Load data with XMLHttpRequest
