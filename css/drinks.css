@@ -15,6 +15,7 @@ h1 {
   font-family: "Montserrat", sans-serif;
   color: var(--accent-color);
   font-weight: 700;
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 
 hr {
@@ -42,4 +43,10 @@ hr {
 
 .item__inner {
   margin-left: 10px;
+}
+
+
+.item__img {
+  max-width: 70px;
+  width: 100%;
 }
