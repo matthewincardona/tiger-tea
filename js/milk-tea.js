@@ -45,7 +45,10 @@ class MilkTea extends HTMLElement {
     </div>
     `;
   }
+<<<<<<< Updated upstream
   
+=======
+>>>>>>> Stashed changes
 }
 
 // register component

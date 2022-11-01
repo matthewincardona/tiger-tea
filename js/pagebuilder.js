@@ -1,7 +1,12 @@
 // TO DO:
 // - put json reader in a separate file
 
+<<<<<<< Updated upstream
 import drinkList from "../templates/item-list.js";
+=======
+// import drinkList from "../templates/item-list.js";
+import "../js/milk-tea.js";
+>>>>>>> Stashed changes
 
 const xhr = new XMLHttpRequest();
 const url = "../data/items.json";
@@ -17,7 +22,12 @@ xhr.addEventListener("load", function () {
     localStorage.setItem("Item Objects", JSON.stringify(Items));
 
     for (let item of Items) {
+<<<<<<< Updated upstream
       output += drinkList(item);
+=======
+      // output += drinkList(item);
+      output += `<milk-tea name="${item.name}" price="3${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}"></milk-tea>`;
+>>>>>>> Stashed changes
     }
     addElement(output);
   }
