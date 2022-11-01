@@ -4,8 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customize Drink</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="drinks.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/drinks.css" />
     <!-- link fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,19 +13,51 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="./pagebuilder.js" type="module"></script>
   </head>
   <body>
-    <script>
-    function saveSelection(sel) {
-        localStorage.setItem("selected", sel);
-        window.open("details.html", "_self");
-    }
-        </script>
-    <div id="all-drinks" onclick="saveSelection()">
-      <h1>All Drinks</h1>
-      <hr />
-      <div class="item-list__container" id="item-list">
+    <script type="module">
+      import { buildModule } from "./builder/module-builder.js";
+      import { loadJSON } from "./utilities/load-json.js";
+
+      // Parse url for a potential ID
+      let params = new URL(document.location).searchParams;
+      let productId;
+      productId = params.get("productId");
+      console.log(productId);
+
+      const startBuild = () => {
+        loadJSON("./data/items.json")
+          .then((data) => {
+            buildModule("customize-item", data[productId]);
+            buildModule("customize-btns", null);
+          })
+          .catch((data) => {
+            console.log(data);
+          });
+      };
+
+      document.getElementById("add-to-cart").addEventListener("click", () => {
+        let item = {
+          id: 1,
+          name: "Oreo Milk Tea",
+          price: 3.99,
+        };
+
+        localStorage.setItem("cart", JSON.stringify(item));
+        console.log(localStorage);
+      });
+
+      startBuild();
+    </script>
+
+      <div id="customize-item">
+        <h1>Customize Item</h1>
+        <hr />
+        <customize-item class="item-list__container"></customize-item>
+        <customize-btns class="item-list__container"></customize-btns>
+
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
     </div>
   </body>
 </html>

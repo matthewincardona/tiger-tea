@@ -1,0 +1,204 @@
+body {
+  background-color: white;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+
+:root {
+  --primary-color: #ca5310;
+
+  --accent-color: #700353;
+}
+
+img {
+  max-width: 100%;
+  /* height: auto; */
+}
+
+.title {
+  font-size: clamp(1rem, 5vw, 3rem);
+}
+.spot {
+  /* width: 75%; */
+  /* padding: 1.5em; */
+  /* margin: 2em auto; */
+  margin: 15px;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: clamp(.1rem, 1rem, 1.5rem);
+  justify-content: center;
+  text-align: center;
+}
+.spot-name {
+  font-size: clamp(.8rem, 2.5vw, 1.5rem);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ca5310;
+  color: #fff;
+}
+.spot-photo {
+  height: auto;
+  width: clamp(5rem, 40vw, 15rem);
+  /* float: left;
+    width: 40%;
+    margin-right: 2em; */
+}
+ul {
+  list-style-type: none;
+  /* float:right;
+    width:100%; */
+}
+li {
+  font-size: 1.4rem;
+  padding-bottom: 0.25em;
+}
+.prop {
+  font-size: 0.8em;
+  font-weight: 100;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.nav-float {
+  /* float: left; */
+  transform: rotate(-180deg);
+}
+h1 {
+  flex-grow: 2;
+  font-family: "Montserrat", sans-serif;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+
+main {
+  position: relative;
+  width: 100%;
+  /* background-color: #f9f2de; */
+  background-color: white;
+  contain: content;
+}
+
+.logo{
+  display: flex;
+  margin:20vw 20vw 10vw 20vw;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-img{
+  width: clamp(10vw, 40vw, 60vw);
+  height: auto;
+  margin-bottom: 5vh;
+}
+
+.card-drinks{
+  display: flex;
+}
+
+#card_list{
+  align-content: center;
+  display: flex;
+}
+
+#display{
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
+
+.button-cover {
+  display: flex;
+  height: 10vw;
+  /* margin: 20px; */
+  background-color: #ccc;
+  /* box-shadow: 0 10px 20px -8px #c5d6d6; */
+  border-radius: 5em;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  height: 100%;
+}
+
+.checkbox {
+  position: relative;
+  opacity: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+.knobs {
+  justify-self: center;
+}
+
+/* Button 10 */
+#delivery .knobs:before,
+#delivery .knobs:after,
+#delivery .knobs span {
+  position: absolute;
+  top: 1vw;
+  width: 35vw;
+  height: 8vw;
+  text-align: center;
+  border-radius: 5em;
+  transition: 0.3s ease all;
+}
+
+#delivery .knobs:before {
+  content: "";
+  left: 1vw;;
+  background-color: #ca5310;;
+}
+
+#delivery .knobs:after {
+  content: "Pickup";
+  right: 1vw;;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #4e4e4e;
+}
+
+#delivery .knobs span {
+  color: #fff;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
+#delivery .checkbox:checked + .knobs span {
+  color: #4e4e4e;
+}
+
+#delivery .checkbox:checked + .knobs:before {
+  left: 34vw;
+  background-color: #ca5310;;
+}
+
+#delivery .checkbox:checked + .knobs:after {
+  color: #fff;
+}
+
+#delivery .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}
+
