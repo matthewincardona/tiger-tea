@@ -1,10 +1,7 @@
-export default function drinkList(items) {
-  return `
-    <div class="item">
-        <img src="${items.thumbnail}" alt="${items.name}" class="item__img" />
-        <div class="item__inner">
-            <h4 class="item__name">${items.name}</h4>
-            <p class="item__price">$${items.price}</p>
-        </div>
-    </div>`;
+import "../js/milk-tea.js";
+
+export default function drinkList(item) {
+    return `
+    <<milk-tea name="${item.name}" price="3${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}"></milk-tea>
+    `;
 }

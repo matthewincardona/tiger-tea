@@ -13,20 +13,39 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="./js/pagebuilder.js" type="module"></script>
+    </script>
+    <script type="module">
+      import { buildModule }  from "./builder/module-builder.js";
+      import { loadJSON } from "./utilities/load-json.js";
+      // import { openURL } from "./utilities/dynamic-url.js";
+
+      const startBuild = () => {
+        loadJSON("./data/items.json")
+          .then((data) => {
+            buildModule("item-list", data);
+          })
+          .catch((data) => {
+            console.log(data);
+          });
+      };
+
+      startBuild();
+    </script>
+
+    <script>
+        function openURL(id) {
+          let targetUrl = "customize-item.html";
+          let urlWithId = targetUrl + "?productId=" + id;
+          console.log(urlWithId);
+          window.open(urlWithId, "_self");
+        }
+    </script>
   </head>
   <body>
-    <script>
-    function saveSelection(sel) {
-        localStorage.setItem("selected", sel);
-        window.open("customize-item.html", "_self");
-    }
-        </script>
-    <div id="all-drinks" onclick="saveSelection()">
+    <div id="all-drinks">
       <h1>All Drinks</h1>
       <hr />
-      <div class="item-list__container" id="item-list">
-        
+      <item-list class="item-list__container"></item-list>
     </div>
   </body>
 </html>

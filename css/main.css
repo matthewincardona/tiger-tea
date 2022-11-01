@@ -71,7 +71,12 @@ header {
 }
 h1 {
   flex-grow: 2;
+  font-family: "Montserrat", sans-serif;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 4rem);
 }
+
 
 main {
   position: relative;

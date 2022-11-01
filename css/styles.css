@@ -1,0 +1,111 @@
+body {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primary-color: #ca5310;
+
+  --accent-color: #700353;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--accent-color);
+  font-size: clamp(2rem, 10vw, 3rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+hr {
+  width: 90%;
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+#all-drinks {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-list__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.item__inner {
+  margin-left: 10px;
+}
+
+/* ===============
+  Customize Item
+===============
+ */
+
+#customize-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.customizations__container {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="radio"] {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+button {
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 100px;
+  padding: 5px 20px;
+  width: 250px;
+  height: 60px;
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+#add-to-cart::before {
+  content: "";
+  background-image: url("./media/add-to-cart\ 1.png");
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  right: 15%;
+  position: absolute;
+}
