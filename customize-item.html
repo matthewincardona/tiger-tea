@@ -45,6 +45,8 @@
 
       // create cart object
       document.getElementById("add-to-cart").addEventListener("click", () => {
+        document.getElementById("cart-msg--successful").innerHTML =
+          "Item added!";
         item.jelly = getSelectedValue("jelly");
         item.tapiocaPearl = getSelectedValue("tapioca-pearl");
         item.sweetness = getSelectedValue("sweetness");
@@ -53,6 +55,7 @@
         // localStorage.clear();
         localStorage.setItem("Cart", JSON.stringify(item));
         console.log(item);
+
         // console.log(localStorage);
       });
 
@@ -166,6 +169,7 @@
           <hr />
         </div>
         <button id="add-to-cart">Add to Cart</button>
+        <p id="cart-msg--successful" style="margin-top: 20px; height: 30px"></p>
       </div>
     </div>
     <link href="../css/navigation.css" rel="stylesheet" />
