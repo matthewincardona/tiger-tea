@@ -7,7 +7,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/original.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -18,7 +18,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/green.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -29,7 +29,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/taro.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -40,7 +40,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/thai.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -51,7 +51,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/mango.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -62,7 +62,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/oreo.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -73,7 +73,7 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/matcha.png",
-    "calorie" : 200
+    "calorie": 200
   },
 
   {
@@ -84,6 +84,6 @@
     "category": "drink",
     "isPopular": true,
     "menu_img": "../media/strawberry.png",
-    "calorie" : 200
+    "calorie": 200
   }
 ]
