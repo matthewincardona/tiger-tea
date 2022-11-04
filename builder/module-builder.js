@@ -5,6 +5,13 @@ let output = "";
 export function buildModule(moduleName, Items) {
   console.log("Building '" + moduleName + "' module...");
 
+  // 404 redirect
+  if (Items === undefined || Items === null) {
+    window.open("./404.html", "_self");
+    console.log("404 ERROR PAGE DOES NOT EXIST");
+    return;
+  }
+
   // if the incoming data is an array, loop over it
   if (Array.isArray(Items)) {
     // Map data to a specific module
