@@ -1,7 +1,20 @@
-export default function customizeBtns(item) {
-  return `
-    <div class="customizations__container">
-        <!-- tapioca pearls -->
+// web component
+
+class CustomizeOptions extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  // attribute change
+  attributeChangedCallback(property, oldValue, newValue) {
+    if (oldValue === newValue) return;
+    this[property] = newValue;
+  }
+
+  // connect component
+  connectedCallback() {
+    this.innerHTML = `
+    <!-- tapioca pearls -->
         <div class="customizations__box">
           <h4>Tapioca Pearls</h4>
           <input
@@ -83,7 +96,7 @@ export default function customizeBtns(item) {
 
         <!-- ice -->
         <div class="customizations__box">
-          <h4>Sweetness</h4>
+          <h4>Ice</h4>
           <input type="radio" id="ice-full" name="ice" value="Full" />
           <label for="ice-full">Full</label><br />
           <input type="radio" id="ice-half" name="ice" value="Half" />
@@ -91,5 +104,10 @@ export default function customizeBtns(item) {
           <input type="radio" id="ice-none" name="ice" value="None" />
           <label for="ice-none">None</label><br />
           <hr />
-        </div>`;
+        </div>
+    `;
+  }
 }
+
+// register component
+customElements.define("customize-options", CustomizeOptions);
