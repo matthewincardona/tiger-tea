@@ -1,6 +1,6 @@
 // web component
 
-class Navigation extends HTMLElement {
+class NavBar extends HTMLElement {
   constructor() {
     super();
   }
@@ -36,4 +36,4 @@ class Navigation extends HTMLElement {
 }
 
 // register component
-customElements.define("navigation", Navigation);
+customElements.define("nav-bar", NavBar);

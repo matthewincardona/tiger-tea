@@ -37,7 +37,7 @@ class MilkTea extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <link href="../css/milk-tea.css" rel="stylesheet" />
-    <div class="container" onclick="openURL(${this.id})">
+    <div class="container">
       <div class="drink-img">
         <img class="" src="${this.menu_img}">
       </div>
