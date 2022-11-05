@@ -10,6 +10,9 @@
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/navigation.css" rel="stylesheet" />
   </head>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/milk-tea.js"></script>
   <script>
     function openURL(id) {
       console.log(id);
@@ -37,23 +40,7 @@
       <hr />
     </header>
     <main id="card_list"></main>
-    <script src="./js/main.js"></script>
-    <script src="./js/milk-tea.js"></script>
-    <nav>
-      <div class="nav-inner">
-        <a href="./index.html">
-          <img class="nav-image" src="./media/Home.svg" alt="" />
-        </a>
-        <a href="#">
-          <img class="nav-image" src="./media/Favorites.svg" alt="" />
-        </a>
-        <a href="./cart.html">
-          <img class="nav-image" src="./media/Cart.svg" alt="" />
-        </a>
-        <a href="#">
-          <img class="nav-image" src="./media/Profile.svg" alt="" />
-        </a>
-      </div>
-    </nav>
+
+    <nav-bar></nav-bar>
   </body>
 </html>
