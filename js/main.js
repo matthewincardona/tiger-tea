@@ -5,7 +5,7 @@ let output = "";
 /// Load data with XMLHttpRequest
 xhr.addEventListener("load", function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
-    // console.log(this.response);
+    console.log(this.response);
     const Spots = JSON.parse(xhr.response);
     console.log(Spots);
 
