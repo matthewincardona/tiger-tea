@@ -30,6 +30,13 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
 h4 {
   font-family: "Montserrat", sans-serif;
   color: var(--accent-color);
@@ -45,6 +52,8 @@ hr {
   height: 3px;
   background-color: #d9d9d9;
   border: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #all-drinks {

@@ -26,8 +26,9 @@ const geTotalPrice = (cartItems) => {
   let total = 0;
 
   for (var i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].price;
     console.log(cartItems[i]);
+    total += cartItems[i].price;
+    total = Math.round(total * 100) / 100;
   }
   document.getElementById("total").innerHTML = "$ " + total.toString();
 };
