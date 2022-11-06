@@ -30,9 +30,7 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
   item.sweetness = getSelectedValue("sweetness");
   item.ice = getSelectedValue("ice");
 
-  // localStorage.clear();
   addToCartCookie("Cart", item);
-  console.log(localStorage);
 });
 
 const getSelectedValue = (selectedValue) => {
@@ -46,20 +44,15 @@ const getSelectedValue = (selectedValue) => {
   }
 };
 
-// https://stackoverflow.com/questions/70565017/how-to-append-to-a-local-storage-instead-of-replacing-when-new-object-is-passed
-export const addToCartCookie = (key, cartItem) => {
-  const cart = window.localStorage.getItem(key);
+// https://laracasts.com/discuss/channels/javascript/append-object-to-localstorage
+const addToCartCookie = (key, cartItem) => {
+  let data = localStorage.getItem(key);
 
-  if (cart === null) {
-    window.localStorage.setItem(key, JSON.stringify([cartItem]));
-  } else {
-    const getCurrentCart = window.localStorage.getItem(key);
-    const currentCart = JSON.parse(getCurrentCart);
+  // create array is cart is empty, parse existing items if not
+  data = data ? JSON.parse(data) : [];
+  data.push(cartItem);
 
-    console.log("Current cart: " + currentCart);
-    console.log("Local storage: " + window.localStorage);
-    currentCart.push(cartItem);
-
-    window.localStorage.setItem(key, JSON.stringify(currentCart));
-  }
+  // stringify array and add to storage
+  localStorage.setItem(key, JSON.stringify(data));
+  console.log(localStorage.getItem(key));
 };
