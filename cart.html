@@ -20,12 +20,21 @@
     <script src="./js/navigation.js"></script>
     <script type="module">
       import { buildModule } from "./builder/module-builder.js";
+      import { getFromStorage } from "./utilities/get-from-storage.js";
+
+      var item = {};
 
       const startBuild = () => {
-        // pull items from local storage
-        let items = localStorage.getItem("Cart");
-        console.log(items);
-        buildModule("customize-item", items);
+        getFromStorage("Cart")
+          .then((data) => {
+            // item = JSON.parse(data);
+            console.log(item);
+
+            buildModule("customize-item", item);
+          })
+          .catch((data) => {
+            console.log(data);
+          });
       };
 
       startBuild();
