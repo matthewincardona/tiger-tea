@@ -10,3 +10,25 @@
 #total {
   font-size: clamp(1rem, 10vw, 1.4rem);
 }
+
+.item-tools {
+  display: flex;
+  margin-right: 30px;
+  margin-bottom: 2em;
+  justify-content: flex-end;
+}
+
+.item-tools__btn {
+  font-size: 12px;
+  height: 40px;
+  color: #2a1a1f;
+  max-width: 100px;
+  background-color: rgb(206, 206, 206);
+  margin-right: 30px;
+  border: none;
+}
+
+.item-tools__btn:hover {
+  border: none;
+  background-color: rgb(228, 227, 227);
+}

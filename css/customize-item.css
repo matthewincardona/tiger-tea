@@ -25,42 +25,6 @@
   margin-bottom: 15px;
 }
 
-input[type="radio"] {
-  margin-left: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-label {
-  cursor: pointer;
-  font-size: clamp(1rem, 3vw, 1.6rem);
-  margin-left: 10px;
-  margin-bottom: 20px;
-}
-
-button {
-  color: white;
-  background: none;
-  background-color: var(--primary-color);
-  border-radius: 100px;
-  padding: 5px 20px;
-  width: 250px;
-  height: 60px;
-  position: relative;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-
-button:hover {
-  border: 2px solid var(--primary-color);
-  background-color: none;
-  background: none;
-  color: #2a1a1f;
-  transform: scale(1.01);
-}
-
 /* #add-to-cart::before {
   content: "";
   background-image: url("./media/add-to-cart\ 1.png");

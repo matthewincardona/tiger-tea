@@ -12,7 +12,7 @@ const startBuild = () => {
   getFromStorage("Cart")
     .then((data) => {
       console.log(data);
-      buildModule("item-full", data);
+      buildModule("item-cart", data);
       geTotalPrice(data);
     })
     .catch((data) => {
