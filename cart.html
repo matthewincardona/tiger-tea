@@ -27,7 +27,7 @@
       const startBuild = () => {
         getFromStorage("Cart")
           .then((data) => {
-            // item = JSON.parse(data);
+            item = JSON.parse(data);
             console.log(item);
 
             buildModule("customize-item", item);
