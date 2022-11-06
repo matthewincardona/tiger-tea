@@ -44,7 +44,7 @@ const getSelectedValue = (selectedValue) => {
   }
 };
 
-localStorage.clear();
+// localStorage.clear();
 
 const addToCartCookie = (key, cartItem) => {
   //   localStorage.clear();
