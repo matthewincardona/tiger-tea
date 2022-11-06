@@ -1,20 +1,6 @@
-// web component
-
-class CustomizeOptions extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  // attribute change
-  attributeChangedCallback(property, oldValue, newValue) {
-    if (oldValue === newValue) return;
-    this[property] = newValue;
-  }
-
-  // connect component
-  connectedCallback() {
-    this.innerHTML = `
-    <!-- tapioca pearls -->
+export default function customizeOptions(item) {
+  return `
+        <!-- tapioca pearls -->
         <div class="customizations__box">
           <h4>Tapioca Pearls</h4>
           <input
@@ -104,10 +90,5 @@ class CustomizeOptions extends HTMLElement {
           <input type="radio" id="ice-none" name="ice" value="None" />
           <label for="ice-none">None</label><br />
           <hr />
-        </div>
-    `;
-  }
+        </div>`;
 }
-
-// register component
-customElements.define("customize-options", CustomizeOptions);
