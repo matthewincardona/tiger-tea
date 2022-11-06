@@ -32,9 +32,9 @@
           data = [];
         }
 
-        cartItem.positionInCart = data.length();
-        console.log(cartItem);
-        data.push(cartItem);
+        let selectedItem = data[positionInCart];
+        console.log(selectedItem);
+        data.splice(positionInCart, 1); // remove 1 from cart
 
         // stringify array and add to storage
         localStorage.setItem(key, JSON.stringify(data));
