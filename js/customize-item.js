@@ -31,7 +31,7 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
   item.ice = getSelectedValue("ice");
 
   // localStorage.clear();
-  addToCartCookie("Cart", JSON.stringify(item));
+  addToCartCookie("Cart", item);
   console.log(localStorage);
 });
 
