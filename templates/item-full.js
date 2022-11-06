@@ -1,6 +1,6 @@
 // web component
 
-class MilkTea extends HTMLElement {
+class ItemFull extends HTMLElement {
   constructor() {
     super();
     this.id = "";
@@ -55,4 +55,10 @@ class MilkTea extends HTMLElement {
 }
 
 // register component
-customElements.define("milk-tea", MilkTea);
+customElements.define("item-full", ItemFull);
+
+export default function itemFull(item) {
+  return `
+    <item-full name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}"></item-full>
+    `;
+}

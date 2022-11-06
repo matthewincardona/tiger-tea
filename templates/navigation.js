@@ -14,7 +14,7 @@ class NavBar extends HTMLElement {
   // connect component
   connectedCallback() {
     this.innerHTML = `
-    <link href="../css/navigation.css" rel="stylesheet" />
+    <link href="./css/navigation.css" rel="stylesheet" />
     <nav>
       <div class="nav-inner">
         <a href="./index.html">
