@@ -58,6 +58,8 @@ const addToCartCookie = (key, cartItem) => {
     data = [];
   }
 
+  cartItem.positionInCart = data.length();
+  console.log(cartItem);
   data.push(cartItem);
 
   // stringify array and add to storage
