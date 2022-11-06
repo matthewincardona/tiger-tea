@@ -30,7 +30,6 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
   item.sweetness = getSelectedValue("sweetness");
   item.ice = getSelectedValue("ice");
 
-  console.log(item);
   addToCartCookie("Cart", item);
 });
 
@@ -47,12 +46,11 @@ const getSelectedValue = (selectedValue) => {
 
 // https://laracasts.com/discuss/channels/javascript/append-object-to-localstorage
 const addToCartCookie = (key, cartItem) => {
-  console.log(cartItem);
+  console.log(localStorage);
   let data = localStorage.getItem(key);
-  console.log(data);
 
   // create array is cart is empty, parse existing items if not
-  data = data ? JSON.parse(data) : [];
+  data = data ? JSON.parse(JSON.stringify(data)) : [];
   data.push(cartItem);
 
   // stringify array and add to storage
