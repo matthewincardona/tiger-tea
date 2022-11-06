@@ -11,6 +11,7 @@ class ItemCart extends HTMLElement {
     this.isPopular = "false";
     this.menu_img = "";
     this.calorie = "";
+    this.positionInCart = "";
   }
 
   // component attributes
@@ -24,6 +25,7 @@ class ItemCart extends HTMLElement {
       "isPopular",
       "menu_img",
       "calorie",
+      "positionInCart",
     ];
   }
 
@@ -37,7 +39,7 @@ class ItemCart extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <link href="./css/item.css" rel="stylesheet" />
-    <div class="container">
+    <div class="container" position-in-cart="${this.positionInCart}">
       <div class="drink-img">
         <img class="" src="${this.menu_img}">
       </div>
@@ -51,9 +53,8 @@ class ItemCart extends HTMLElement {
       </div>
     </div>
     <div class="item-tools">
-        <button class="item-tools__btn">Edit</button>
-        <button class="item-tools__btn">Delete</button>
-
+        <button class="item-tools__btn" onclick="editItem(${this.positionInCart})">Edit</button>
+        <button class="item-tools__btn" onclick="deleteItem(${this.positionInCart})">Delete</button>
       </div>
     `;
   }

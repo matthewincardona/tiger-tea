@@ -20,6 +20,27 @@
   <body>
     <script src="./templates/navigation.js"></script>
     <script type="module" src="./js/cart.js"></script>
+    <script>
+      const deleteItem = (positionInCart) => {
+        let data = localStorage.getItem(key);
+
+        if (data != null) {
+          console.log("Cart exists!");
+          data = JSON.parse(data);
+        } else {
+          console.log("Cart is empty :(");
+          data = [];
+        }
+
+        cartItem.positionInCart = data.length();
+        console.log(cartItem);
+        data.push(cartItem);
+
+        // stringify array and add to storage
+        localStorage.setItem(key, JSON.stringify(data));
+        console.log(localStorage.getItem(key));
+      };
+    </script>
     <main>
       <div id="customize-item">
         <h1>Place Your Order</h1>
