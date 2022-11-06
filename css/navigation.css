@@ -1,9 +1,12 @@
 nav {
+  position: sticky;
+  bottom: 0;
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
   width: 90vw;
   border-top: #818181 2px solid;
+  background-color: white;
   /* box-shadow: 1px -4px 12px 1px rgba(0, 0, 0, 0.57);
   -webkit-box-shadow: 1px -4px 12px 1px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 1px -4px 12px 1px rgba(0, 0, 0, 0.57); */
