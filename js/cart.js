@@ -13,6 +13,7 @@ const startBuild = () => {
     .then((data) => {
       console.log(data);
       buildModule("item-full", data);
+      geTotalPrice(data);
     })
     .catch((data) => {
       console.log(data);
@@ -20,3 +21,13 @@ const startBuild = () => {
 };
 
 startBuild();
+
+const geTotalPrice = (cartItems) => {
+  let total = 0;
+
+  for (var i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].price;
+    console.log(cartItems[i]);
+  }
+  document.getElementById("total").innerHTML = total.toString();
+};
