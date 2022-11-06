@@ -48,18 +48,18 @@ const getSelectedValue = (selectedValue) => {
 
 // https://stackoverflow.com/questions/70565017/how-to-append-to-a-local-storage-instead-of-replacing-when-new-object-is-passed
 export const addToCartCookie = (key, cartItem) => {
-  const cart = localStorage.getItem(key);
+  const cart = window.localStorage.getItem(key);
 
   if (cart === null) {
-    localStorage.setItem(key, JSON.stringify([cartItem]));
+    window.localStorage.setItem(key, JSON.stringify([cartItem]));
   } else {
-    const getCurrentCart = localStorage.getItem(key);
+    const getCurrentCart = window.localStorage.getItem(key);
     const currentCart = JSON.parse(getCurrentCart);
 
     console.log("Current cart: " + currentCart);
-    console.log("Local storage: " + localStorage);
+    console.log("Local storage: " + window.localStorage);
     currentCart.push(cartItem);
 
-    localStorage.setItem(key, JSON.stringify(currentCart));
+    window.localStorage.setItem(key, JSON.stringify(currentCart));
   }
 };
