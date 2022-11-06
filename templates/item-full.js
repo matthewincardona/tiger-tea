@@ -36,7 +36,7 @@ class ItemFull extends HTMLElement {
   // connect component
   connectedCallback() {
     this.innerHTML = `
-    <link href="../css/item.css" rel="stylesheet" />
+    <link href="./css/item.css" rel="stylesheet" />
     <div class="container">
       <div class="drink-img">
         <img class="" src="${this.menu_img}">

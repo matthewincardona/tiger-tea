@@ -28,7 +28,6 @@ const startBuild = () => {
     .then((data) => {
       item = data[productId - 1];
       console.log(item);
-
       buildModule("item-full", item);
     })
     .catch((data) => {
