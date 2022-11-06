@@ -47,6 +47,7 @@ const getSelectedValue = (selectedValue) => {
 
 // https://laracasts.com/discuss/channels/javascript/append-object-to-localstorage
 const addToCartCookie = (key, cartItem) => {
+  console.log(cartItem);
   let data = localStorage.getItem(key);
   console.log(data);
 
