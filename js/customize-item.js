@@ -56,6 +56,7 @@ export const addToCartCookie = (key, cartItem) => {
     const getCurrentCart = localStorage.getItem(key);
     const currentCart = JSON.parse(getCurrentCart);
 
+    console.log("Current cart: " + currentCart);
     currentCart.push(cartItem);
 
     localStorage.setItem(key, JSON.stringify(currentCart));
