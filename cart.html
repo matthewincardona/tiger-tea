@@ -22,7 +22,7 @@
     <script type="module" src="./js/cart.js"></script>
     <script>
       const deleteItem = (positionInCart) => {
-        let data = localStorage.getItem(key);
+        let data = localStorage.getItem("Cart");
 
         if (data != null) {
           console.log("Cart exists!");
@@ -37,8 +37,8 @@
         data.splice(positionInCart, 1); // remove 1 from cart
 
         // stringify array and add to storage
-        localStorage.setItem(key, JSON.stringify(data));
-        console.log(localStorage.getItem(key));
+        localStorage.setItem("Cart", JSON.stringify(data));
+        console.log(localStorage.getItem("Cart"));
       };
     </script>
     <main>
