@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customize Drink</title>
+    <!-- link fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/customize-item.css" />
+    <script src="./templates/navigation.js"></script>
+    <script src="./templates/customize-options.js"></script>
+    <script type="module" src="./js/customize-item.js"></script>
+  </head>
+  <body>
+    <div id="customize-item">
+      <h1>Personalize Your Drink</h1>
+      <hr />
+      <item-full class="item-list__container"></item-full>
+      <div class="customizations__container">
+        <customize-options></customize-options>
+        <button id="add-to-cart">Add to Cart</button>
+        <p id="cart-msg--successful" style="margin-top: 20px; height: 30px"></p>
+      </div>
+    </div>
+    <nav-bar></nav-bar>
+  </body>
+</html>

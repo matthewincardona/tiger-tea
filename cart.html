@@ -40,6 +40,18 @@
 
         location.reload();
       };
+
+      const editItem = (positionInCart) => {
+        openURL(positionInCart);
+      };
+
+      function openURL(id) {
+        console.log(id);
+        let targetUrl = "edit-cart-item.html";
+        let urlWithId = targetUrl + "?productId=" + id;
+        console.log(urlWithId);
+        window.open(urlWithId, "_self");
+      }
     </script>
     <main>
       <div id="customize-item">

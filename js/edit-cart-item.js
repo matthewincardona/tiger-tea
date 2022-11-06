@@ -1,17 +1,18 @@
 import { buildModule } from "../builder/module-builder.js";
 import { loadJSON } from "../utilities/load-json.js";
+import { getFromStorage } from "../utilities/get-from-storage.js";
 
 // Parse url for a product ID
 let params = new URL(document.location).searchParams;
-let productId;
-productId = params.get("productId");
-console.log(productId);
+let positionInCart;
+positionInCart = params.get("productId");
+console.log("positionInCart: " + positionInCart);
 var item = {};
 
 const startBuild = () => {
-  loadJSON("./data/items.json")
+  getFromStorage("Cart")
     .then((data) => {
-      item = data[productId - 1];
+      item = data[positionInCart];
       console.log(item);
       buildModule("item-full", item);
     })
@@ -21,6 +22,19 @@ const startBuild = () => {
 };
 
 startBuild();
+
+const editItem = () => {
+  let data = localStorage.getItem("Cart");
+
+  if (data != null) {
+    data = JSON.parse(data);
+  } else {
+    data = [];
+  }
+
+  let selectedItem = data[positionInCart];
+  console.log("Editing selected item: " + selectedItem);
+};
 
 // create cart object
 document.getElementById("add-to-cart").addEventListener("click", () => {
@@ -44,7 +58,7 @@ const getSelectedValue = (selectedValue) => {
   }
 };
 
-// localStorage.clear();
+localStorage.clear();
 
 const addToCartCookie = (key, cartItem) => {
   //   localStorage.clear();

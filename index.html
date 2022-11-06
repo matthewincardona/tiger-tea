@@ -17,7 +17,7 @@
   <script src="./templates/navigation.js"></script>
   <script src="./js/index.js"></script>
   <script>
-    function openURL(id) {
+    const openURL = (id) => {
       console.log(id);
       let targetUrl = "customize-item.html";
       let urlWithId = targetUrl + "?productId=" + id;
