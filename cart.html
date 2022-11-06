@@ -31,7 +31,7 @@
             item = JSON.parse(data);
             console.log(item);
 
-            buildModule("customize-item", item);
+            buildModule("item-full", item);
           })
           .catch((data) => {
             console.log(data);
@@ -44,7 +44,7 @@
     <div id="customize-item">
       <h1>Place Your Order</h1>
       <hr />
-      <customize-item class="item-list__container"></customize-item>
+      <item-full class="item-list__container"></item-full>
     </div>
     <nav-bar></nav-bar>
   </body>
