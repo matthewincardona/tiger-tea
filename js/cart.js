@@ -29,5 +29,5 @@ const geTotalPrice = (cartItems) => {
     total += cartItems[i].price;
     console.log(cartItems[i]);
   }
-  document.getElementById("total").innerHTML = total.toString();
+  document.getElementById("total").innerHTML = "$ " + total.toString();
 };
