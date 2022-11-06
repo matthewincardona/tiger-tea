@@ -27,6 +27,7 @@ h1 {
   color: var(--accent-color);
   font-size: clamp(2rem, 10vw, 3rem);
   font-weight: 700;
+  text-align: center;
 }
 
 h4 {

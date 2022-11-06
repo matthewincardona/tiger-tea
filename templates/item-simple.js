@@ -36,7 +36,7 @@ class ItemSimple extends HTMLElement {
   // connect component
   connectedCallback() {
     this.innerHTML = `
-    <link href="../css/milk-tea.css" rel="stylesheet" />
+    <link href="../css/item.css" rel="stylesheet" />
     <div class="container">
       <div class="drink-img">
         <img class="" src="${this.menu_img}">
@@ -59,6 +59,6 @@ customElements.define("item-simple", ItemSimple);
 
 export default function itemSimple(item) {
   return `
-    <milk-tea name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}"></milk-tea>
+    <item-simple name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}"></item-simple>
     `;
 }
