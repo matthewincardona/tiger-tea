@@ -39,7 +39,7 @@ class ItemCart extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <link href="./css/item.css" rel="stylesheet" />
-    <div class="container" position-in-cart="${this.price}">
+    <div class="container" position-in-cart="${this.positionInCart}">
       <div class="drink-img">
         <img class="" src="${this.menu_img}">
       </div>
