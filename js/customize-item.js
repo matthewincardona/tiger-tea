@@ -46,14 +46,18 @@ const getSelectedValue = (selectedValue) => {
 
 localStorage.clear();
 
-// https://laracasts.com/discuss/channels/javascript/append-object-to-localstorage
 const addToCartCookie = (key, cartItem) => {
-  console.log(localStorage);
+  //   localStorage.clear();
   let data = localStorage.getItem(key);
 
-  // create array is cart is empty, parse existing items if not
-  data = data ? JSON.parse(JSON.stringify(data)) : [];
-  console.log(data);
+  if (data != null) {
+    console.log("Cart exists!");
+    data = JSON.parse(data);
+  } else {
+    console.log("Cart is empty :(");
+    data = [];
+  }
+
   data.push(cartItem);
 
   // stringify array and add to storage

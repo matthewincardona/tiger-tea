@@ -17,30 +17,8 @@
     />
   </head>
   <body>
-    <script src="./js/navigation.js"></script>
-    <script src="./js/cart.js"></script>
-    <script type="module">
-      import { buildModule } from "./builder/module-builder.js";
-      import { getFromStorage } from "./utilities/get-from-storage.js";
-
-      var item = {};
-
-      const startBuild = () => {
-        getFromStorage("Cart")
-          .then((data) => {
-            item = JSON.parse(data);
-            console.log(item);
-
-            buildModule("item-full", item);
-          })
-          .catch((data) => {
-            console.log(data);
-          });
-      };
-
-      startBuild();
-    </script>
-
+    <script src="./templates/navigation.js"></script>
+    <script type="module" src="./js/cart.js"></script>
     <div id="customize-item">
       <h1>Place Your Order</h1>
       <hr />
