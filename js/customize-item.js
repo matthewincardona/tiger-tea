@@ -48,7 +48,7 @@ const getSelectedValue = (selectedValue) => {
 
 // https://stackoverflow.com/questions/70565017/how-to-append-to-a-local-storage-instead-of-replacing-when-new-object-is-passed
 export const addToCartCookie = (key, cartItem) => {
-  const cart = getFromStorage(key);
+  const cart = localStorage.getItem(key);
 
   if (cart === null) {
     localStorage.setItem(key, JSON.stringify([cartItem]));
