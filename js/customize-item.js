@@ -58,7 +58,7 @@ const addToCartCookie = (key, cartItem) => {
     data = [];
   }
 
-  cartItem.positionInCart = data.length();
+  cartItem.positionInCart = data.length;
   console.log(cartItem);
   data.push(cartItem);
 
