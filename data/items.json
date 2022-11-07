@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Original Milk Tea",
     "price": 3.99,
+    "positionInCart": 1,
     "thumbnail": "../media/popular-original.png",
     "category": "drink",
     "isPopular": true,
