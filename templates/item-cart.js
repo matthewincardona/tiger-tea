@@ -65,6 +65,6 @@ customElements.define("item-cart", ItemCart);
 
 export default function itemCart(item) {
   return `
-    <item-cart name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}" positionInCart="${this.positionInCart}"></item-cart>
+    <item-cart name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}" positionInCart="${item.positionInCart}"></item-cart>
     `;
 }
