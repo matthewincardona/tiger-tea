@@ -53,7 +53,7 @@ class ItemCart extends HTMLElement {
       </div>
     </div>
     <div class="item-tools">
-        <button class="item-tools__btn" onclick="editItem(${this.positionInCart})">Edit</button>
+        <button class="item-tools__btn" onclick="editItem(${this.price})">Edit</button>
         <button class="item-tools__btn" onclick="deleteItem(${this.positionInCart})">Delete</button>
       </div>
     `;
