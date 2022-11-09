@@ -147,6 +147,7 @@ main {
   /* background-color: #f9f2de; */
   background-color: white;
   contain: content;
+  margin-bottom: 2em;
 }
 
 .logo {
