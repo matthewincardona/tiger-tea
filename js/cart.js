@@ -10,6 +10,7 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 
 const startBuild = () => {
   let data = allStorage();
+  console.log(data);
   buildModule('item-cart', data);
   getTotalPrice(data);
 };
