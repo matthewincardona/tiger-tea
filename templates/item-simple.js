@@ -39,8 +39,8 @@ class ItemSimple extends HTMLElement {
     <link href="./css/item.css" rel="stylesheet" />
     <div class="card-drinks" onclick="openURL(${this.id})">
     <div class="spot" ${this.id}">
-      <p class="spot-name">${item.name}</p>
-      <img src="${item.thumbnail}" alt="${item.name}" class="spot-photo" />
+      <p class="spot-name">${this.name}</p>
+      <img src="${this.thumbnail}" alt="${this.name}" class="spot-photo" />
     </div>
   </div>
     `;
