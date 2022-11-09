@@ -192,7 +192,7 @@ main {
   /* margin-top: 5vh; */
 }
 
-#display-index{
+#display-index {
   display: flex;
   /* flex-wrap: wrap; */
   place-content: center;
@@ -223,6 +223,10 @@ main {
 @media only screen and (min-width: 1600px) {
   .button-cover {
     transform: scale(0.4);
+  }
+  #delivery .knobs:after {
+    content: "Pickup";
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
   }
 }
 
