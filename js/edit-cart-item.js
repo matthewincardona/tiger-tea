@@ -13,12 +13,12 @@ const startBuild = () => {
     .then((data) => {
       console.log(data);
       item = data;
-      setValue();
       buildModule('item-full', data);
     })
     .catch((data) => {
       console.log(data);
     });
+  setValue();
 };
 
 startBuild();
@@ -45,6 +45,7 @@ function setSelectedValue(selectedValue, itemValue) {
 
 // create cart object
 document.getElementById('add-to-cart').addEventListener('click', () => {
+  console.log('Updated cart!');
   document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
   item.jelly = getSelectedValue('jelly');
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
