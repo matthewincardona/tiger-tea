@@ -61,6 +61,7 @@ function getSelectedValue(selectedValue) {
   for (i = 0; i < ele.length; i++) {
     if (ele[i].checked) {
       let choice = ele[i].value;
+      console.log(choice);
       return choice;
     }
   }
