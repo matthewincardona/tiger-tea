@@ -23,16 +23,18 @@ const startBuild = () => {
 startBuild();
 
 // set checked radio buttons
-item.jelly = setSelectedValue('jelly');
-item.tapiocaPearl = setSelectedValue('tapioca-pearl');
-item.sweetness = setSelectedValue('sweetness');
-item.ice = setSelectedValue('ice');
+item.jelly = setSelectedValue('jelly', item.jelly);
+item.tapiocaPearl = setSelectedValue('tapioca-pearl', item.tapiocaPearl);
+item.sweetness = setSelectedValue('sweetness', item.sweetness);
+item.ice = setSelectedValue('ice', item.ice);
 
 function setSelectedValue(selectedValue, itemValue) {
+  console.log(itemValue);
   var ele = document.getElementsByName(selectedValue);
   let i;
   for (i = 0; i < ele.length; i++) {
     if ((ele[i].value = itemValue)) {
+      console.log('Found a match!');
       ele[i].checked = 'true';
       return choice;
     }
