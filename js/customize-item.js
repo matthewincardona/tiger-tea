@@ -30,10 +30,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   item.ice = getSelectedValue('ice');
 
   // check for empty choices
-  if (
-    (item.jelly & item.tapiocaPearl & item.sweetness & item.ice) !=
-    undefined
-  ) {
+  if ((item.jelly && item.tapiocaPearl && item.sweetness && item.ice) != '') {
     document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
     addToCartCookie(item);
   } else {
