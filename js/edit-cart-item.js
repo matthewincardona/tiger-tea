@@ -6,7 +6,7 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 let params = new URL(document.location).searchParams;
 let position = params.get('productId');
 console.log('position: ' + position);
-var item = {};
+var item;
 
 const startBuild = () => {
   getFromStorage(position)
