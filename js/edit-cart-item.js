@@ -12,19 +12,19 @@ const startBuild = () => {
   getFromStorage(position)
     .then((data) => {
       console.log(data);
-      item = data;
       buildModule('item-full', data);
+      setValue(data);
     })
     .catch((data) => {
       console.log(data);
     });
-  setValue();
 };
 
 startBuild();
 
-function setValue() {
+function setValue(data) {
   // set checked radio buttons
+  item = data;
   console.log(item);
   setSelectedValue('jelly', item.jelly);
   setSelectedValue('tapioca-pearl', item.tapiocaPearl);
