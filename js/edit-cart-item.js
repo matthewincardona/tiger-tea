@@ -18,7 +18,7 @@ const startBuild = () => {
     .catch((data) => {
       console.log(data);
     });
-  setValue(data);
+  setValue();
 };
 
 startBuild();
