@@ -9,7 +9,7 @@ export async function loadJSON(url) {
         let res = JSON.parse(xhr.response);
 
         // This just sets the entire response into localStorage
-        // localStorage.setItem("Item Objects", JSON.stringify(res));
+        localStorage.setItem('Item Objects', JSON.stringify(res));
         resolve(res);
       }
     });

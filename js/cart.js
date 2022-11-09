@@ -11,7 +11,7 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 const startBuild = () => {
   let data = allStorage();
   console.log(data);
-  buildModule('item-cart', JSON.parse(data));
+  buildModule('item-cart', data);
   getTotalPrice(data);
 };
 
@@ -24,7 +24,7 @@ function allStorage() {
     values.push(localStorage.getItem(keys[i]));
   }
 
-  return values;
+  return JSON.parse(values);
 }
 
 startBuild();
