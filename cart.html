@@ -21,12 +21,12 @@
     <script src="./templates/navigation.js"></script>
     <script type="module" src="./js/cart.js"></script>
     <script>
-      function deleteItem(position) {
+      const deleteItem = (position) => {
         console.log('Deleting item with position: ' + position);
-        let data = localStorage.getItem(position);
-
+        localStorage.removeItem(position);
+        // cries in beauty.. item has been removed.
         location.reload();
-      }
+      };
 
       const editItem = (key) => {
         console.log('Editing item with position: ' + key);
