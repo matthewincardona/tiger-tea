@@ -1,5 +1,5 @@
 const xhr = new XMLHttpRequest();
-const url = "../data/items.json";
+const url = "./data/items.json";
 let output = "";
 
 /// Load data with XMLHttpRequest
