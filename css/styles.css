@@ -218,6 +218,10 @@ main {
   .button-cover {
     transform: scale(0.7);
   }
+  #delivery .knobs:after {
+    content: "Pickup";
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+  }
 }
 
 @media only screen and (min-width: 1600px) {
