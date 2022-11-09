@@ -184,10 +184,11 @@ main {
 
 #display {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   place-content: center;
-  margin: 10vh 10%;
-  margin-top: 5vh;
+  flex-direction: column;
+  /* margin: 10vh 10%; */
+  /* margin-top: 5vh; */
 }
 
 .button-cover {
