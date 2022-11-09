@@ -21,10 +21,10 @@ function allStorage() {
     i = keys.length;
 
   while (i--) {
-    values.push(localStorage.getItem(keys[i]));
+    values.push(JSON.parse(localStorage.getItem(keys[i])));
   }
 
-  return JSON.parse(values);
+  return values;
 }
 
 startBuild();
