@@ -1,20 +1,20 @@
-import { buildModule } from "../builder/module-builder.js";
-import { loadJSON } from "../utilities/load-json.js";
-import { getFromStorage } from "../utilities/get-from-storage.js";
+import { buildModule } from '../builder/module-builder.js';
+import { loadJSON } from '../utilities/load-json.js';
+import { getFromStorage } from '../utilities/get-from-storage.js';
 
 // Parse url for a product ID
 let params = new URL(document.location).searchParams;
-let positionInCart;
-positionInCart = params.get("productId");
-console.log("positionInCart: " + positionInCart);
+let position;
+position = params.get('productId');
+console.log('position: ' + position);
 var item = {};
 
 const startBuild = () => {
-  getFromStorage("Cart")
+  getFromStorage('Cart')
     .then((data) => {
-      item = data[positionInCart];
+      item = data[position];
       console.log(item);
-      buildModule("item-full", item);
+      buildModule('item-full', item);
     })
     .catch((data) => {
       console.log(data);
@@ -24,7 +24,7 @@ const startBuild = () => {
 startBuild();
 
 const editItem = () => {
-  let data = localStorage.getItem("Cart");
+  let data = localStorage.getItem('Cart');
 
   if (data != null) {
     data = JSON.parse(data);
@@ -32,19 +32,19 @@ const editItem = () => {
     data = [];
   }
 
-  let selectedItem = data[positionInCart];
-  console.log("Editing selected item: " + selectedItem);
+  let selectedItem = data[position];
+  console.log('Editing selected item: ' + selectedItem);
 };
 
 // create cart object
-document.getElementById("add-to-cart").addEventListener("click", () => {
-  document.getElementById("cart-msg--successful").innerHTML = "Item added!";
-  item.jelly = getSelectedValue("jelly");
-  item.tapiocaPearl = getSelectedValue("tapioca-pearl");
-  item.sweetness = getSelectedValue("sweetness");
-  item.ice = getSelectedValue("ice");
+document.getElementById('add-to-cart').addEventListener('click', () => {
+  document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
+  item.jelly = getSelectedValue('jelly');
+  item.tapiocaPearl = getSelectedValue('tapioca-pearl');
+  item.sweetness = getSelectedValue('sweetness');
+  item.ice = getSelectedValue('ice');
 
-  addToCartCookie("Cart", item);
+  addToCartCookie('Cart', item);
 });
 
 const getSelectedValue = (selectedValue) => {
@@ -65,14 +65,14 @@ const addToCartCookie = (key, cartItem) => {
   let data = localStorage.getItem(key);
 
   if (data != null) {
-    console.log("Cart exists!");
+    console.log('Cart exists!');
     data = JSON.parse(data);
   } else {
-    console.log("Cart is empty :(");
+    console.log('Cart is empty :(');
     data = [];
   }
 
-  cartItem.positionInCart = data.length;
+  cartItem.position = data.length;
   console.log(cartItem);
   data.push(cartItem);
 

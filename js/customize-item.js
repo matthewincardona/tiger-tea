@@ -53,7 +53,7 @@ const getSelectedValue = (selectedValue) => {
 const addToCartCookie = (cartItem) => {
   let key = uid();
   console.log(cartItem);
-  cartItem.positionInCart = key;
+  cartItem.position = key;
 
   // stringify array and add to storage
   localStorage.setItem(key, JSON.stringify(cartItem));
