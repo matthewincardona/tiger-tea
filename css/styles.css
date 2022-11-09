@@ -209,6 +209,12 @@ main {
   }
 }
 
+@media only screen and (min-width: 1600px) {
+  .button-cover {
+    transform: scale(0.4);
+  }
+}
+
 .button {
   position: relative;
   width: 100%;
