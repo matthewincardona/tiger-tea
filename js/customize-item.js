@@ -30,7 +30,12 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
   item.sweetness = getSelectedValue("sweetness");
   item.ice = getSelectedValue("ice");
 
-  addToCartCookie("Cart", item);
+
+  let item2 = {
+    "name": "hi",
+    "price": 2.99,
+  }
+  addToCartCookie(item2);
 });
 
 const getSelectedValue = (selectedValue) => {
@@ -46,23 +51,16 @@ const getSelectedValue = (selectedValue) => {
 
 // localStorage.clear();
 
-const addToCartCookie = (key, cartItem) => {
-  //   localStorage.clear();
-  let data = localStorage.getItem(key);
-
-  if (data != null) {
-    console.log("Cart exists!");
-    data = JSON.parse(data);
-  } else {
-    console.log("Cart is empty :(");
-    data = [];
-  }
-
-  cartItem.positionInCart = data.length;
+const addToCartCookie = (cartItem) => {
+  let key = uid();
   console.log(cartItem);
-  data.push(cartItem);
+  cartItem.positionInCart = key;
 
   // stringify array and add to storage
-  localStorage.setItem(key, JSON.stringify(data));
+  localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
 };
+
+const uid = () => {
+  return Date.now().toString(36) + Math.random().toString(36);
+}
