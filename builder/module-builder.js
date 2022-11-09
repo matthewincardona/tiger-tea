@@ -31,8 +31,8 @@ export function buildModule(moduleName, Items) {
     newDiv.id = 'display';
     newDiv.insertAdjacentHTML('afterbegin', data_input);
 
-    let targetElement = document.getElementsByTagName(moduleName)[0];
-
+    // let targetElement = document.getElementsByTagName(moduleName)[0];
+    let targetElement = document.getElementById('module-builder');
     targetElement.appendChild(newDiv);
   }
 }

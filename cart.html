@@ -28,10 +28,9 @@
         location.reload();
       };
 
-      const editItem = (key) => {
-        console.log('Editing item with position: ' + key);
-        localStorage.removeItem(key);
-        openURL(key);
+      const editItem = (position) => {
+        console.log('Editing item with position: ' + position);
+        openURL(position);
       };
 
       function openURL(id) {
@@ -46,7 +45,8 @@
       <div id="customize-item">
         <h1>Place Your Order</h1>
         <hr />
-        <item-cart class="item-list__container"></item-cart>
+        <div id="module-builder" class="item-list__container"></div>
+        <!-- <item-cart class="item-list__container"></item-cart> -->
       </div>
       <div id="order-total">
         <h3>Order Total</h3>
