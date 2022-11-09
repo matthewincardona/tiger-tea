@@ -191,6 +191,15 @@ main {
   /* margin-top: 5vh; */
 }
 
+#display-index{
+  display: flex;
+  /* flex-wrap: wrap; */
+  place-content: center;
+  flex-wrap: wrap;
+  /* margin: 10vh 10%; */
+  /* margin-top: 5vh; */
+}
+
 .button-cover {
   display: flex;
   height: 10vw;
@@ -214,6 +223,8 @@ main {
   position: relative;
   width: 100%;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .button.r,
@@ -312,6 +323,8 @@ button {
   font-weight: bold;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {

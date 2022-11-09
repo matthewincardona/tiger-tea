@@ -20,7 +20,7 @@ xhr.addEventListener('load', function () {
   function addElement(data_input) {
     // create a new div element, append it to main
     const newDiv = document.createElement('div');
-    newDiv.id = 'display';
+    newDiv.id = 'display-index';
     newDiv.insertAdjacentHTML('afterbegin', data_input);
 
     const currentDiv = document.getElementById('card_list');

@@ -13,11 +13,13 @@
 
 .item-tools {
   display: flex;
-  margin-right: 30px;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 2em;
   margin-top: -20px;
-  justify-content: flex-end;
+  justify-content: center;
   padding: .5em;
+  width: 60vw;
 }
 
 .item-tools__btn {
@@ -28,6 +30,9 @@
   background-color: rgb(206, 206, 206);
   margin-right: 30px;
   border: none;
+  display:flex;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 
 .item-tools__btn:hover {
