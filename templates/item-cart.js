@@ -11,7 +11,7 @@ class ItemCart extends HTMLElement {
     this.isPopular = 'false';
     this.menu_img = '';
     this.calorie = '';
-    this.positionInCart = '';
+    this.position = '';
   }
 
   // component attributes
@@ -25,7 +25,7 @@ class ItemCart extends HTMLElement {
       'isPopular',
       'menu_img',
       'calorie',
-      'positionInCart',
+      'position',
     ];
   }
 
@@ -53,8 +53,8 @@ class ItemCart extends HTMLElement {
       </div>
     </div>
     <div class="item-tools">
-        <button class="item-tools__btn" onclick="editItem(${this.price})">Edit</button>
-        <button class="item-tools__btn" onclick="deleteItem(${this.positionInCart})">Delete</button>
+        <button class="item-tools__btn" onclick="editItem(${this.position})">Edit</button>
+        <button class="item-tools__btn" onclick="deleteItem(${this.position})">Delete</button>
       </div>
     `;
   }
@@ -65,6 +65,6 @@ customElements.define('item-cart', ItemCart);
 
 export default function itemCart(item) {
   return `
-    <item-cart name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}" positionInCart="${item.positionInCart}"></item-cart>
+    <item-cart name="${item.name}" price="${item.price}" menu_img="${item.menu_img}" calorie="${item.calorie}" position="${item.position}"></item-cart>
     `;
 }
