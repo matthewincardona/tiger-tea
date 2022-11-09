@@ -51,7 +51,6 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
   item.sweetness = getSelectedValue('sweetness');
   item.ice = getSelectedValue('ice');
-  item.ice = 'SADSADADDSADASD';
   console.log(item);
   addToCartCookie(position);
 });
