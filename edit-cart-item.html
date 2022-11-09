@@ -17,16 +17,17 @@
     <link rel="stylesheet" href="css/customize-item.css" />
     <script src="./templates/navigation.js"></script>
     <script src="./templates/customize-options.js"></script>
-    <script type="module" src="./js/customize-item.js"></script>
+    <script type="module" src="./js/edit-cart-item.js"></script>
   </head>
   <body>
     <div id="customize-item">
       <h1>Personalize Your Drink</h1>
       <hr />
-      <item-full class="item-list__container"></item-full>
+      <div id="module-builder" class="item-list__container"></div>
+      <!-- <item-full class="item-list__container"></item-full> -->
       <div class="customizations__container">
         <customize-options></customize-options>
-        <button id="add-to-cart">Add to Cart</button>
+        <button id="add-to-cart">Update Item</button>
         <p id="cart-msg--successful" style="margin-top: 20px; height: 30px"></p>
       </div>
     </div>

@@ -21,45 +21,32 @@
     <script src="./templates/navigation.js"></script>
     <script type="module" src="./js/cart.js"></script>
     <script>
-      const deleteItem = (positionInCart) => {
-        console.log("Deleting item with position: " + positionInCart);
-        let data = localStorage.getItem("Cart");
-
-        if (data != null) {
-          data = JSON.parse(data);
-        } else {
-          data = [];
-        }
-
-        let selectedItem = data[positionInCart];
-        data.splice(positionInCart, 1); // remove 1 from cart
-        console.log("Removed item from cart: " + selectedItem);
-
-        // stringify array and add to storage
-        localStorage.setItem("Cart", JSON.stringify(data));
-        console.log(localStorage.getItem("Cart"));
-
+      const deleteItem = (position) => {
+        console.log('Deleting item with position: ' + position);
+        localStorage.removeItem(position);
+        // cries in beauty.. item has been removed.
         location.reload();
       };
 
-      const editItem = (positionInCart) => {
-        console.log("Editing item with position: " + positionInCart);
-        openURL(positionInCart);
+      const editItem = (position) => {
+        console.log('Editing item with position: ' + position);
+        openURL(position);
       };
 
       function openURL(id) {
         console.log(id);
-        let targetUrl = "edit-cart-item.html";
-        let urlWithId = targetUrl + "?productId=" + id;
+        let targetUrl = 'edit-cart-item.html';
+        let urlWithId = targetUrl + '?productId=' + id;
         console.log(urlWithId);
-        window.open(urlWithId, "_self");
+        window.open(urlWithId, '_self');
       }
     </script>
     <main>
       <div id="customize-item">
         <h1>Place Your Order</h1>
         <hr />
-        <item-cart class="item-list__container"></item-cart>
+        <div id="module-builder" class="item-list__container"></div>
+        <!-- <item-cart class="item-list__container"></item-cart> -->
       </div>
       <div id="order-total">
         <h3>Order Total</h3>

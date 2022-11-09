@@ -1,8 +1,8 @@
 .container {
   display: flex;
   padding: 1em;
-  width: 90%;
-  margin: auto;
+  /* width: 90%; */
+  /* margin: auto; */
   /* animation: bounce-in 0.5s 0.5s ease-in-out forwards; */
 }
 
@@ -26,9 +26,11 @@
 .drink-img {
   width: clamp(5rem, 40vw, 15rem);
   height: clamp(5rem, 40vw, 15rem);
-  background-color: #fffef6;
+  /* background-color: #C7B299; */
   border-radius: 1em;
   display: block;
+  /* border: solid 3px; */
+  /* border-color: #700353; */
 }
 
 .drink-img img {

@@ -3,27 +3,27 @@
 class ItemSimple extends HTMLElement {
   constructor() {
     super();
-    this.id = "";
-    this.name = "";
-    this.price = "";
-    this.thumbnail = "";
-    this.category = "";
-    this.isPopular = "false";
-    this.menu_img = "";
-    this.calorie = "";
+    this.id = '';
+    this.name = '';
+    this.price = '';
+    this.thumbnail = '';
+    this.category = '';
+    this.isPopular = 'false';
+    this.menu_img = '';
+    this.calorie = '';
   }
 
   // component attributes
   static get observedAttributes() {
     return [
-      "id",
-      "name",
-      "price",
-      "thumbnail",
-      "category",
-      "isPopular",
-      "menu_img",
-      "calorie",
+      'id',
+      'name',
+      'price',
+      'thumbnail',
+      'category',
+      'isPopular',
+      'menu_img',
+      'calorie',
     ];
   }
 
@@ -37,25 +37,18 @@ class ItemSimple extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <link href="./css/item.css" rel="stylesheet" />
-    <div class="container">
-      <div class="drink-img">
-        <img class="" src="${this.menu_img}">
-      </div>
-      <div class="drink-info">
-        <p class="name">${this.name}</p>
-        <p class="price">&#36 ${this.price}</p>
-        <div class="nutrition">
-          <img class="" src="./media/nutritional.svg">
-          <p class="calorie">${this.calorie} cal</p>
-        </div>
-      </div>
+    <div class="card-drinks" onclick="openURL(${this.id})">
+    <div class="spot" ${this.id}">
+      <p class="spot-name">${this.name}</p>
+      <img src="${this.thumbnail}" alt="${this.name}" class="spot-photo" />
     </div>
+  </div>
     `;
   }
 }
 
 // register component
-customElements.define("item-simple", ItemSimple);
+customElements.define('item-simple', ItemSimple);
 
 export default function itemSimple(item) {
   return `
