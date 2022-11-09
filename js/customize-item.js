@@ -30,11 +30,15 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   item.sweetness = getSelectedValue('sweetness');
   item.ice = getSelectedValue('ice');
 
-  // let item2 = {
-  //   "name": "hi",
-  //   "price": 2.99,
-  // }
-  addToCartCookie(item);
+  // check for empty choices
+  if (
+    (item.jelly || item.tapiocaPearl || item.sweetness || item.ice) == undefined
+  ) {
+    alert("HEY!! You didn't select all of the options!");
+    return;
+  } else {
+    addToCartCookie(item);
+  }
 });
 
 const getSelectedValue = (selectedValue) => {
