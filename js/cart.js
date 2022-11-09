@@ -8,6 +8,17 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 //   menu_img: "./media/strawberry.png",
 // };
 
+const getTotalPrice = (cartItems) => {
+  let total = 0;
+
+  for (var i = 0; i < cartItems.length; i++) {
+    console.log(cartItems[i]);
+    total += cartItems[i].price;
+    total = Math.round(total * 100) / 100;
+  }
+  document.getElementById('total').innerHTML = '$ ' + total.toString();
+};
+
 const startBuild = () => {
   let data = allStorage();
   console.log(data);
@@ -28,14 +39,3 @@ function allStorage() {
 }
 
 startBuild();
-
-const getTotalPrice = (cartItems) => {
-  let total = 0;
-
-  for (var i = 0; i < cartItems.length; i++) {
-    console.log(cartItems[i]);
-    total += cartItems[i].price;
-    total = Math.round(total * 100) / 100;
-  }
-  document.getElementById('total').innerHTML = '$ ' + total.toString();
-};
