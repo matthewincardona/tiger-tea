@@ -24,7 +24,6 @@ startBuild();
 
 // create cart object
 document.getElementById('add-to-cart').addEventListener('click', () => {
-  document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
   item.jelly = getSelectedValue('jelly');
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
   item.sweetness = getSelectedValue('sweetness');
@@ -32,11 +31,13 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 
   // check for empty choices
   if (
-    (item.jelly || item.tapiocaPearl || item.sweetness || item.ice) == undefined
+    (item.jelly & item.tapiocaPearl & item.sweetness & item.ice) !=
+    undefined
   ) {
-    alert("HEY!! You didn't select all of the options!");
-  } else {
+    document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
     addToCartCookie(item);
+  } else {
+    alert("HEY!! You didn't select all of the options!");
   }
 });
 
