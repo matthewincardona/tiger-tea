@@ -39,7 +39,6 @@ function setSelectedValue(selectedValue, itemValue) {
     if ((ele[i].value = itemValue)) {
       console.log('Found a match!');
       ele[i].checked = 'true';
-      return choice;
     }
   }
 }

@@ -20,6 +20,7 @@ export function buildModule(moduleName, Items) {
     }
     addElement(output);
   } else {
+    console.log(Items);
     output += mapTemplate(moduleName, Items);
     addElement(output);
   }
