@@ -41,7 +41,7 @@ function setSelectedValue(selectedValue, itemValue) {
 
 // create cart object
 document.getElementById('add-to-cart').addEventListener('click', () => {
-  document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
+  document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
   item.jelly = getSelectedValue('jelly');
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
   item.sweetness = getSelectedValue('sweetness');
@@ -62,6 +62,7 @@ function getSelectedValue(selectedValue) {
 }
 
 const addToCartCookie = (key, cartItem) => {
+  localStorage.removeItem(key);
   console.log(cartItem);
   localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
