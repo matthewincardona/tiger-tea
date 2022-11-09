@@ -6,17 +6,15 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 let params = new URL(document.location).searchParams;
 let position = params.get('productId');
 console.log('position: ' + position);
-var item = {};
 
 const startBuild = () => {
   getFromStorage(position)
-    .then((data) => {
-      item = data[position];
+    .then((item) => {
       console.log(item);
       buildModule('item-full', item);
     })
-    .catch((data) => {
-      console.log(data);
+    .catch((item) => {
+      console.log(item);
     });
 };
 
