@@ -63,10 +63,7 @@ const getSelectedValue = (selectedValue) => {
 };
 
 const addToCartCookie = (key, cartItem) => {
-  let key = uid();
   console.log(cartItem);
-  cartItem.position = key;
-
   localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
 };

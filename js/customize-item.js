@@ -35,7 +35,6 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
     (item.jelly || item.tapiocaPearl || item.sweetness || item.ice) == undefined
   ) {
     alert("HEY!! You didn't select all of the options!");
-    return;
   } else {
     addToCartCookie(item);
   }
