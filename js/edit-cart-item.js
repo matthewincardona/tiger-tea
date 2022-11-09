@@ -18,17 +18,18 @@ const startBuild = () => {
     .catch((data) => {
       console.log(data);
     });
-  setValue();
+  setValue(data);
 };
 
 startBuild();
 
 function setValue() {
   // set checked radio buttons
-  item.jelly = setSelectedValue('jelly', item.jelly);
-  item.tapiocaPearl = setSelectedValue('tapioca-pearl', item.tapiocaPearl);
-  item.sweetness = setSelectedValue('sweetness', item.sweetness);
-  item.ice = setSelectedValue('ice', item.ice);
+  console.log(item);
+  setSelectedValue('jelly', item.jelly);
+  setSelectedValue('tapioca-pearl', item.tapiocaPearl);
+  setSelectedValue('sweetness', item.sweetness);
+  setSelectedValue('ice', item.ice);
 }
 
 function setSelectedValue(selectedValue, itemValue) {
