@@ -10,7 +10,7 @@ xhr.addEventListener('load', function () {
     console.log(Spots);
 
     // This just sets the entire response into localStorage
-    localStorage.setItem('Spot Objects', JSON.stringify(Spots));
+    // localStorage.setItem('Spot Objects', JSON.stringify(Spots));
 
     for (let spot of Spots) {
       output += surfTemplate(spot);
