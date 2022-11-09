@@ -46,13 +46,11 @@ function setSelectedValue(selectedValue, itemValue) {
 
 // create cart object
 document.getElementById('add-to-cart').addEventListener('click', () => {
-  console.log('Updated cart!');
-  document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
   item.jelly = getSelectedValue('jelly');
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
   item.sweetness = getSelectedValue('sweetness');
   item.ice = getSelectedValue('ice');
-
+  console.log(item);
   addToCartCookie(position, item);
 });
 
@@ -72,4 +70,6 @@ const addToCartCookie = (key, cartItem) => {
   console.log(cartItem);
   localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
+  console.log('Updated cart!');
+  document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
 };
