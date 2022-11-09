@@ -29,7 +29,7 @@ item.tapiocaPearl = setSelectedValue('tapioca-pearl');
 item.sweetness = setSelectedValue('sweetness');
 item.ice = setSelectedValue('ice');
 
-const setSelectedValue = (selectedValue, itemValue) => {
+function setSelectedValue(selectedValue, itemValue) {
   var ele = document.getElementsByName(selectedValue);
   let i;
   for (i = 0; i < ele.length; i++) {
@@ -38,7 +38,7 @@ const setSelectedValue = (selectedValue, itemValue) => {
       return choice;
     }
   }
-};
+}
 
 // create cart object
 document.getElementById('add-to-cart').addEventListener('click', () => {
@@ -51,7 +51,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   addToCartCookie(position, item);
 });
 
-const getSelectedValue = (selectedValue) => {
+function getSelectedValue(selectedValue) {
   var ele = document.getElementsByName(selectedValue);
   let i;
   for (i = 0; i < ele.length; i++) {
@@ -60,7 +60,7 @@ const getSelectedValue = (selectedValue) => {
       return choice;
     }
   }
-};
+}
 
 const addToCartCookie = (key, cartItem) => {
   console.log(cartItem);

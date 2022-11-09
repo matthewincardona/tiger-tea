@@ -40,7 +40,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   }
 });
 
-const getSelectedValue = (selectedValue) => {
+function getSelectedValue(selectedValue) {
   var ele = document.getElementsByName(selectedValue);
   let i;
   for (i = 0; i < ele.length; i++) {
@@ -49,7 +49,7 @@ const getSelectedValue = (selectedValue) => {
       return choice;
     }
   }
-};
+}
 
 // localStorage.clear();
 
