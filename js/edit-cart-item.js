@@ -10,7 +10,7 @@ console.log('position: ' + position);
 var item = {};
 
 const startBuild = () => {
-  getFromStorage('Cart')
+  getFromStorage(position)
     .then((data) => {
       item = data[position];
       console.log(item);
@@ -23,17 +23,22 @@ const startBuild = () => {
 
 startBuild();
 
-const editItem = () => {
-  let data = localStorage.getItem('Cart');
+// set checked radio buttons
+document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
+item.jelly = setSelectedValue('jelly');
+item.tapiocaPearl = setSelectedValue('tapioca-pearl');
+item.sweetness = setSelectedValue('sweetness');
+item.ice = setSelectedValue('ice');
 
-  if (data != null) {
-    data = JSON.parse(data);
-  } else {
-    data = [];
+const setSelectedValue = (selectedValue, itemValue) => {
+  var ele = document.getElementsByName(selectedValue);
+  let i;
+  for (i = 0; i < ele.length; i++) {
+    if ((ele[i].value = itemValue)) {
+      ele[i].checked = 'true';
+      return choice;
+    }
   }
-
-  let selectedItem = data[position];
-  console.log('Editing selected item: ' + selectedItem);
 };
 
 // create cart object
@@ -57,8 +62,6 @@ const getSelectedValue = (selectedValue) => {
     }
   }
 };
-
-localStorage.clear();
 
 const addToCartCookie = (key, cartItem) => {
   //   localStorage.clear();
