@@ -1,14 +1,14 @@
-import { mapTemplate } from "./template-mapper.js";
+import { mapTemplate } from './template-mapper.js';
 
-let output = "";
+let output = '';
 
 export function buildModule(moduleName, Items) {
   console.log("Building '" + moduleName + "' module...");
 
   // 404 redirect
   if (Items === undefined || Items === null) {
-    window.open("./404.html", "_self");
-    console.log("404 ERROR PAGE DOES NOT EXIST");
+    window.open('./404.html', '_self');
+    console.log('404 ERROR PAGE DOES NOT EXIST');
     return;
   }
 
@@ -17,6 +17,7 @@ export function buildModule(moduleName, Items) {
     // Map data to a specific module
     for (let item of Items) {
       output += mapTemplate(moduleName, item);
+      console.log(item.positionInCart);
     }
     addElement(output);
   } else {
@@ -26,9 +27,9 @@ export function buildModule(moduleName, Items) {
 
   function addElement(data_input) {
     // create a new div element, append it to main
-    const newDiv = document.createElement("div");
-    newDiv.id = "display";
-    newDiv.insertAdjacentHTML("afterbegin", data_input);
+    const newDiv = document.createElement('div');
+    newDiv.id = 'display';
+    newDiv.insertAdjacentHTML('afterbegin', data_input);
 
     let targetElement = document.getElementsByTagName(moduleName)[0];
 
