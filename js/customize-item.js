@@ -1,19 +1,19 @@
-import { buildModule } from "../builder/module-builder.js";
-import { loadJSON } from "../utilities/load-json.js";
+import { buildModule } from '../builder/module-builder.js';
+import { loadJSON } from '../utilities/load-json.js';
 
 // Parse url for a product ID
 let params = new URL(document.location).searchParams;
 let productId;
-productId = params.get("productId");
+productId = params.get('productId');
 console.log(productId);
 var item = {};
 
 const startBuild = () => {
-  loadJSON("./data/items.json")
+  loadJSON('./data/items.json')
     .then((data) => {
       item = data[productId - 1];
       console.log(item);
-      buildModule("item-full", item);
+      buildModule('item-full', item);
     })
     .catch((data) => {
       console.log(data);
@@ -23,19 +23,18 @@ const startBuild = () => {
 startBuild();
 
 // create cart object
-document.getElementById("add-to-cart").addEventListener("click", () => {
-  document.getElementById("cart-msg--successful").innerHTML = "Item added!";
-  item.jelly = getSelectedValue("jelly");
-  item.tapiocaPearl = getSelectedValue("tapioca-pearl");
-  item.sweetness = getSelectedValue("sweetness");
-  item.ice = getSelectedValue("ice");
+document.getElementById('add-to-cart').addEventListener('click', () => {
+  document.getElementById('cart-msg--successful').innerHTML = 'Item added!';
+  item.jelly = getSelectedValue('jelly');
+  item.tapiocaPearl = getSelectedValue('tapioca-pearl');
+  item.sweetness = getSelectedValue('sweetness');
+  item.ice = getSelectedValue('ice');
 
-
-  let item2 = {
-    "name": "hi",
-    "price": 2.99,
-  }
-  addToCartCookie(item2);
+  // let item2 = {
+  //   "name": "hi",
+  //   "price": 2.99,
+  // }
+  addToCartCookie(item);
 });
 
 const getSelectedValue = (selectedValue) => {
@@ -63,4 +62,4 @@ const addToCartCookie = (cartItem) => {
 
 const uid = () => {
   return Date.now().toString(36) + Math.random().toString(36);
-}
+};
