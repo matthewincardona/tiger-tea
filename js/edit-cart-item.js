@@ -4,8 +4,7 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 
 // Parse url for a product ID
 let params = new URL(document.location).searchParams;
-let position;
-position = params.get('productId');
+let position = params.get('productId');
 console.log('position: ' + position);
 var item = {};
 
@@ -49,7 +48,7 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   item.sweetness = getSelectedValue('sweetness');
   item.ice = getSelectedValue('ice');
 
-  addToCartCookie('Cart', item);
+  addToCartCookie(position, item);
 });
 
 const getSelectedValue = (selectedValue) => {
@@ -64,22 +63,10 @@ const getSelectedValue = (selectedValue) => {
 };
 
 const addToCartCookie = (key, cartItem) => {
-  //   localStorage.clear();
-  let data = localStorage.getItem(key);
-
-  if (data != null) {
-    console.log('Cart exists!');
-    data = JSON.parse(data);
-  } else {
-    console.log('Cart is empty :(');
-    data = [];
-  }
-
-  cartItem.position = data.length;
+  let key = uid();
   console.log(cartItem);
-  data.push(cartItem);
+  cartItem.position = key;
 
-  // stringify array and add to storage
-  localStorage.setItem(key, JSON.stringify(data));
+  localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
 };

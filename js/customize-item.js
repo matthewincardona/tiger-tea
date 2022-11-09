@@ -55,7 +55,6 @@ const addToCartCookie = (cartItem) => {
   console.log(cartItem);
   cartItem.position = key;
 
-  // stringify array and add to storage
   localStorage.setItem(key, JSON.stringify(cartItem));
   console.log(localStorage.getItem(key));
 };
