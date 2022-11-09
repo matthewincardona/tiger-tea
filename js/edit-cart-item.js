@@ -38,7 +38,7 @@ function setSelectedValue(selectedValue, itemValue) {
   let i;
   for (i = 0; i < ele.length; i++) {
     if ((ele[i].value = itemValue)) {
-      console.log('Found a match!');
+      console.log(ele[i].value);
       ele[i].checked = 'true';
     }
   }
@@ -50,8 +50,9 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
   item.tapiocaPearl = getSelectedValue('tapioca-pearl');
   item.sweetness = getSelectedValue('sweetness');
   item.ice = getSelectedValue('ice');
+  item.ice = 'SADSADADDSADASD';
   console.log(item);
-  addToCartCookie(position, item);
+  addToCartCookie(position);
 });
 
 function getSelectedValue(selectedValue) {
@@ -65,10 +66,9 @@ function getSelectedValue(selectedValue) {
   }
 }
 
-const addToCartCookie = (key, cartItem) => {
+const addToCartCookie = (key) => {
   localStorage.removeItem(key);
-  console.log(cartItem);
-  localStorage.setItem(key, JSON.stringify(cartItem));
+  localStorage.setItem(key, JSON.stringify(item));
   console.log(localStorage.getItem(key));
   console.log('Updated cart!');
   document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
