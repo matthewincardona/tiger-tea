@@ -37,7 +37,7 @@ class ItemSimple extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <link href="./css/item.css" rel="stylesheet" />
-    <div class="card-drinks" onclick="openURL(${item.id})">
+    <div class="card-drinks" onclick="openURL(${this.id})">
     <div class="spot" ${this.id}">
       <p class="spot-name">${item.name}</p>
       <img src="${item.thumbnail}" alt="${item.name}" class="spot-photo" />
