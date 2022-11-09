@@ -6,22 +6,23 @@ import { getFromStorage } from '../utilities/get-from-storage.js';
 let params = new URL(document.location).searchParams;
 let position = params.get('productId');
 console.log('position: ' + position);
+var item = {};
 
 const startBuild = () => {
   getFromStorage(position)
-    .then((item) => {
-      console.log(item);
-      buildModule('item-full', item);
+    .then((data) => {
+      console.log(data);
+      item = data;
+      buildModule('item-full', data);
     })
-    .catch((item) => {
-      console.log(item);
+    .catch((data) => {
+      console.log(data);
     });
 };
 
 startBuild();
 
 // set checked radio buttons
-document.getElementById('cart-msg--successful').innerHTML = 'Item updated!';
 item.jelly = setSelectedValue('jelly');
 item.tapiocaPearl = setSelectedValue('tapioca-pearl');
 item.sweetness = setSelectedValue('sweetness');
