@@ -17,7 +17,6 @@ export function buildModule(moduleName, Items) {
     // Map data to a specific module
     for (let item of Items) {
       output += mapTemplate(moduleName, item);
-      console.log(item.menu_img);
     }
     addElement(output);
   } else {
