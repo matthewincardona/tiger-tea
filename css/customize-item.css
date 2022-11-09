@@ -25,6 +25,12 @@
   margin-bottom: 15px;
 }
 
+/* #add-to-cart {
+  position: fixed;
+  right: 20px;
+  bottom: 200px;
+} */
+
 /* #add-to-cart::before {
   content: "";
   background-image: url("./media/add-to-cart\ 1.png");

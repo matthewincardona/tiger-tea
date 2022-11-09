@@ -5,6 +5,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #2a1a1f;
   animation: body-anim 0.5s ease-in-out forwards;
+  min-height: 100vh;
 }
 
 @keyframes body-anim {
