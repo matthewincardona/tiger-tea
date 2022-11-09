@@ -61,5 +61,5 @@ const addToCartCookie = (cartItem) => {
 };
 
 const uid = () => {
-  return Date.now().toString(36) + Math.random().toString(36);
+  return Date.now();
 };
