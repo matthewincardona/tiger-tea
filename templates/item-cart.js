@@ -3,29 +3,29 @@
 class ItemCart extends HTMLElement {
   constructor() {
     super();
-    this.id = "";
-    this.name = "";
-    this.price = "";
-    this.thumbnail = "";
-    this.category = "";
-    this.isPopular = "false";
-    this.menu_img = "";
-    this.calorie = "";
-    this.positionInCart = "";
+    this.id = '';
+    this.name = '';
+    this.price = '';
+    this.thumbnail = '';
+    this.category = '';
+    this.isPopular = 'false';
+    this.menu_img = '';
+    this.calorie = '';
+    this.positionInCart = '';
   }
 
   // component attributes
   static get observedAttributes() {
     return [
-      "id",
-      "name",
-      "price",
-      "thumbnail",
-      "category",
-      "isPopular",
-      "menu_img",
-      "calorie",
-      "positionInCart",
+      'id',
+      'name',
+      'price',
+      'thumbnail',
+      'category',
+      'isPopular',
+      'menu_img',
+      'calorie',
+      'positionInCart',
     ];
   }
 
@@ -53,7 +53,7 @@ class ItemCart extends HTMLElement {
       </div>
     </div>
     <div class="item-tools">
-        <button class="item-tools__btn" onclick="editItem(${this.positionInCart})">Edit</button>
+        <button class="item-tools__btn" onclick="editItem(${this.price})">Edit</button>
         <button class="item-tools__btn" onclick="deleteItem(${this.positionInCart})">Delete</button>
       </div>
     `;
@@ -61,7 +61,7 @@ class ItemCart extends HTMLElement {
 }
 
 // register component
-customElements.define("item-cart", ItemCart);
+customElements.define('item-cart', ItemCart);
 
 export default function itemCart(item) {
   return `

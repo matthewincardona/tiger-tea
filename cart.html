@@ -22,25 +22,24 @@
     <script type="module" src="./js/cart.js"></script>
     <script>
       const deleteItem = (positionInCart) => {
-        console.log("Deleting item with position: " + positionInCart);
+        console.log('Deleting item with position: ' + positionInCart);
         let data = localStorage.getItem(positionInCart);
 
-        console.log("Removed item from cart: " + selectedItem);
         location.reload();
       };
 
       const editItem = (key) => {
-        console.log("Editing item with position: " + key);
+        console.log('Editing item with position: ' + key);
         localStorage.removeItem(key);
         openURL(key);
       };
 
       function openURL(id) {
         console.log(id);
-        let targetUrl = "edit-cart-item.html";
-        let urlWithId = targetUrl + "?productId=" + id;
+        let targetUrl = 'edit-cart-item.html';
+        let urlWithId = targetUrl + '?productId=' + id;
         console.log(urlWithId);
-        window.open(urlWithId, "_self");
+        window.open(urlWithId, '_self');
       }
     </script>
     <main>
