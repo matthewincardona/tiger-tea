@@ -13,6 +13,7 @@ const startBuild = () => {
     .then((data) => {
       console.log(data);
       item = data;
+      setValue();
       buildModule('item-full', data);
     })
     .catch((data) => {
@@ -22,11 +23,13 @@ const startBuild = () => {
 
 startBuild();
 
-// set checked radio buttons
-item.jelly = setSelectedValue('jelly', item.jelly);
-item.tapiocaPearl = setSelectedValue('tapioca-pearl', item.tapiocaPearl);
-item.sweetness = setSelectedValue('sweetness', item.sweetness);
-item.ice = setSelectedValue('ice', item.ice);
+function setValue() {
+  // set checked radio buttons
+  item.jelly = setSelectedValue('jelly', item.jelly);
+  item.tapiocaPearl = setSelectedValue('tapioca-pearl', item.tapiocaPearl);
+  item.sweetness = setSelectedValue('sweetness', item.sweetness);
+  item.ice = setSelectedValue('ice', item.ice);
+}
 
 function setSelectedValue(selectedValue, itemValue) {
   console.log(itemValue);
